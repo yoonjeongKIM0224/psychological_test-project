@@ -2,7 +2,7 @@ const main = document.querySelector('#main');
 const qna = document.querySelector('#qna');
 const result = document.querySelector('#result');
 const endPoint = qnaList.length;
-const select = []; //사용자가 선택한
+const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 //*시작하는 함수
 function begin(){
@@ -24,7 +24,7 @@ function begin(){
     // 여기서 실행하면 setTimeout를 거치지 않고 실행하게 됨
 }
 
-function goNext(qIdx){ // 현재 qIdx = 0
+function goNext(qIdx){ // 처음은 qIdx = 0
     if(qIdx === endPoint) {
         goResult();
         return;
@@ -57,7 +57,13 @@ function addAnswer(answerText, qIdx, idx){
     answer.addEventListener('click', function(){
         let children = document.querySelectorAll('.answerList');
 
-        select[qIdx] = idx; //사용자가 누른 버튼
+        let target = qnaList[qIdx].a[idx].type;
+
+        console.log(target);
+
+        for(let i = 0; i < target.length; i++){
+            select[target[i]] += 1;
+        }
 
         for(let i = 0; i < children.length; i++) {
             children[i].disabled = true;
@@ -81,24 +87,35 @@ function goResult(){
 
     }, 240); // 0.24초
 
-    // console.log(select);
+    console.log(select);
+    calResult();
+    setResult();
 
     // 여기서 실행하면 setTimeout를 거치지 않고 실행하게 됨
 }
 
 function calResult(){
-    let pointArray = [
-        {name: 'mouse', value: 0, key: 0},
-        {name: 'cow', value: 0, key: 1},
-        {name: 'tiger', value: 0, key: 2},
-        {name: 'rebbit', value: 0, key: 3},
-        {name: 'dragon', value: 0, key: 4},
-        {name: 'snake', value: 0, key: 5},
-        {name: 'horse', value: 0, key: 6},
-        {name: 'sheep', value: 0, key: 7},
-        {name: 'monkey', value: 0, key: 8},
-        {name: 'chick', value: 0, key: 9},
-        {name: 'dog', value: 0, key: 10},
-        {name: 'pig', value: 0, key: 11}
-    ]
+    //indexOf: 인덱스값 반환, Math.max: 최대값, ...select: 전개구문(선택한 배열을 펼치게 해 줌)
+    let resul = select.indexOf(Math.max(...select));
+
+    return resul;
 }
+
+function setResult(){
+    let point = calResult(); //calResult의 리턴값
+
+    const resultName = document.querySelector('.resultName'); //결과 제목 요소
+    resultName.innerHTML = infoList[point].name; //결과 제목 요소에 텍스트 넣기
+
+    let resultImg = document.createElement('img'); //img 태그 만들기
+    const imgDiv = document.querySelector('#resultImg'); //만든 img 태그 넣을 부모 요소
+    let imgURL = `img/image-${point}.png`; //동일한 주소 변수 생성
+    resultImg.src = imgURL; //img 주소(src)
+    resultImg.alt = point; //img 대체텍스트(alt)
+    resultImg.classList.add('img-fluid'); //img 클래스
+    imgDiv.appendChild(resultImg); //imgDiv(태그 넣을 부모 요소)에 만든 img 태그 넣기
+
+    const resultDesc = document.querySelector('.resultDesc');
+    resultDesc.innerHTML = infoList[point].desc;
+}
+
