@@ -24,6 +24,12 @@
     <title>십이간지 연애유형</title>
 
     <link rel="stylesheet" href="/style/style.css">
+    
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
+
+    <script>
+        Kakao.init('716023b0edf5555127c222ebbe2de3a2'); // 사용하려는 앱의 JavaScript 키 입력
+    </script>
 </head>
 <body>
     <section id="main">
@@ -58,10 +64,11 @@
             
         </div>
 
-        <button type="button">공유하기</button>
+        <button type="button" id="kakaotalk-sharing-btn">공유하기</button>
     </section>
 
-    <script src="./script/data.js"></script>
-    <script src="/script/main.js"></script>
+    <script src="./script/data.js" charset="utf-8"></script>
+    <script src="/script/main.js" charset="utf-8"></script>
+    <script src="/script/share.js" charset="utf-8"></script>
 </body>
 </html>

@@ -24,21 +24,9 @@ function begin(){
     // 여기서 실행하면 setTimeout를 거치지 않고 실행하게 됨
 }
 
-function goNext(qIdx){ // 처음은 qIdx = 0
-    if(qIdx === endPoint) {
-        goResult();
-        return;
-    }
-    
-    let q = document.querySelector('.qBox'); // .qBox
-    q.innerHTML = qnaList[qIdx].q; // .qBox의 질문 넣기
-
-    // Iteration: 되풀이
-    // 변수 i는 qnaList의 qIdx(처음엔 0)번째의 a 안에 있는 배열의 개수만큼 반복
-    for(let i in qnaList[qIdx].a) { 
-        // console.log(i);
-        addAnswer(qnaList[qIdx].a[i].answer, qIdx, i); // 답변(a) 버튼들을 만드는 함수
-    }
+function addAnswer(answerText, qIdx, i){
+    var a = document.querySelector('.answerBox');
+    var answer = document.createElement('button');
 
     //* 상태 바
     let status = document.querySelector('.statusBar');
