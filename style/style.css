@@ -6,7 +6,7 @@
     display:none;
 }
 
-.status {
+/* .status {
     display:block;
     width:100%;
     height:15px;
@@ -20,7 +20,7 @@
     height:100%;
     background-color:red;
     border-radius:100px;
-}
+} */
 
 @keyframes fadeIn {
     from {
