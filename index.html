@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autfor" content="PandaCoding">
-    <meta name="keyword" content="십이간지 연애유형">
-    <meta name="description" content="십이간지 연애유형">
+
+    <meta name="author" content="PandaCoding"> <!-- 문서의 저자 -->
+    <meta name="keyword" content="십이간지 연애유형"> <!-- 검색 엔진을 위한 키워드 정의 -->
+    <meta name="description" content="십이간지 연애유형"> <!-- 웹페이지에 대한 설명 정의 -->
 
     <!-- sns -->
     <meta property="og:url" content="https://temptemptemptemptemp.netlify.app">
@@ -23,7 +24,8 @@
 
     <title>십이간지 연애유형</title>
 
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/main.css">
     
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
 
@@ -32,40 +34,60 @@
     </script>
 </head>
 <body>
-    <section id="main">
-        <h3>십이간지로 알아보는 연애 유형</h3>
-        <button type="button" onclick="begin()">시작하기</button>
-    </section>
-
-    <section id="qna">
-        <div class="status">
-            <div class="statusBar"></div>
-        </div>
-        <div class="qBox">
+    <div class="all-wrapper">
+        <section id="main">
+            <h3>ㅅㅇㄱㅈㄹ ㅇㅇㅂㄴ ㅇㅇㅇㅎ</h3>
             
-        </div>
-        <div class="answerBox">
-            
-        </div>
-    </section>
+            <div class="btn-wrap">
+                <div class="btn-row">
+                    <button type="button" onclick="begin()" class="btn">
+                        <span class="btn-text">시작하기</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    
+        <section id="qna">
+            <!-- 질문 -->
+            <div class="qBox">
+                
+            </div>
 
-    <section id="result">
-        <h1>당신의 결과는?</h1>
+            <!-- 대답 리스트 -->
+            <div class="answerBox">
+                
+            </div>
 
-        <div class="resultName">
-
-        </div>
-
-        <div id="resultImg">
-            <img src="" alt="">
-        </div>
-
-        <div class="resultDesc">
-            
-        </div>
-
-        <button type="button" id="kakaotalk-sharing-btn">공유하기</button>
-    </section>
+            <div class="status">
+                <div class="statusBar"></div>
+            </div>
+        </section>
+    
+        <section id="result">
+            <h1>당신의 결과는?</h1>
+    
+            <div class="resultName">
+    
+            </div>
+    
+            <div id="resultImg">
+                <img src="" alt="">
+            </div>
+    
+            <div class="resultDesc">
+                
+            </div>
+    
+            <div class="btn-wrap">
+                <div class="btn-row">
+                    <button type="button" onclick="begin()" class="btn">
+                        <span class="btn-text">시작하기</span>
+                    </button>
+                </div>
+            </div>
+            <button type="button" id="kakaotalk-sharing-btn">공유하기</button>
+        </section>
+    </div>
 
     <script src="./script/data.js" charset="utf-8"></script>
     <script src="/script/main.js" charset="utf-8"></script>
