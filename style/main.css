@@ -34,6 +34,13 @@ button {
   padding: 20px;
 }
 
+.qBox {
+  display: block;
+  position: relative;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
 .answerBox {
   display: flex;
   flex-direction: column;
@@ -47,9 +54,7 @@ button {
   border: 1px solid #000;
   background-color: #fff;
   text-align: left;
-}
-.answerBox .answerList + .answerList {
-  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .status {
