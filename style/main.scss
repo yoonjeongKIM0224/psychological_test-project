@@ -32,7 +32,7 @@ button {
     position:relative;
     width: 100%;
     // background: #ddd;
-    // max-width: 375px;
+    max-width: 414px;
     margin: 0 auto;
     padding:20px;
 }
@@ -84,8 +84,10 @@ button {
     display: block;
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform:translateX(-50%);
     width: 100%;
+    max-width:414px;
     padding: 16px;
     box-shadow: 0px 0px 26px 12px #fff;
     background-color:#fff;
