@@ -2,7 +2,19 @@ const main = document.querySelector('#main');
 const qna = document.querySelector('#qna');
 const result = document.querySelector('#result');
 const endPoint = qnaList.length;
-const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const select = ['', '', '', '', '', '', '', '', '', '', '', ''];
+
+const selectEI = [];
+const selectSN = [];
+const selectTF = [];
+const selectJP = [];
+
+/*
+EI (1, 2)
+SN (1, 2)
+TF (1, 2)
+JP (1, 2)
+*/
 
 //*시작하는 함수
 function begin(){
@@ -57,13 +69,27 @@ function addAnswer(answerText, qIdx, idx){
     answer.addEventListener('click', function(){
         let children = document.querySelectorAll('.answerList');
 
+        let targetWhich = qnaList[qIdx].which;
         let target = qnaList[qIdx].a[idx].type;
 
+        select[qIdx] = target;
+
+        console.log(targetWhich);
         console.log(target);
 
-        for(let i = 0; i < target.length; i++){
-            select[target[i]] += 1;
+        if(targetWhich === 'EI') {
+            selectEI.push(target);
+        } else if(targetWhich === 'SN') {
+            selectSN.push(target);
+        } else if(targetWhich === 'TF') {
+            selectTF.push(target);
+        } else if(targetWhich === 'JP') {
+            selectJP.push(target);
         }
+
+        //찐 코드: for(let i = 0; i < select.length; i++){
+        //     select[target[i]] += 1;
+        // }
 
         for(let i = 0; i < children.length; i++) {
             children[i].disabled = true;
@@ -87,7 +113,6 @@ function goResult(){
 
     }, 240); // 0.24초
 
-    console.log(select);
     calResult();
     setResult();
 
@@ -96,9 +121,28 @@ function goResult(){
 
 function calResult(){
     //indexOf: 인덱스값 반환, Math.max: 최대값, ...select: 전개구문(선택한 배열을 펼치게 해 줌)
-    let resul = select.indexOf(Math.max(...select));
+    // console.log(selectEI);
+    // console.log(selectSN);
+    // console.log(selectTF);
+    // console.log(selectJP);
 
-    return resul;
+    console.log('EI값: ' + Math.max(...selectEI));
+    console.log('SN값: ' + Math.max(...selectSN));
+    console.log('TF값: ' + Math.max(...selectTF));
+    console.log('JP값: ' + Math.max(...selectJP));
+
+    const EIresul = Math.max(...selectEI);
+    const SNresul = Math.max(...selectSN);
+    const TFresul = Math.max(...selectTF);
+    const JPresul = Math.max(...selectJP);
+
+    console.log(typeof EIresul);
+
+    console.log(String(EIresul) + String(SNresul) + String(TFresul) + String(JPresul));
+
+    // let resul = selectEI.indexOf(Math.max(...select));
+
+    // return resul;
 }
 
 function setResult(){
