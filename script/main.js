@@ -3,10 +3,23 @@ const qna = document.querySelector('#qna');
 const result = document.querySelector('#result');
 const endPoint = qnaList.length;
 
-const selectEI = [];
-const selectSN = [];
-const selectTF = [];
-const selectJP = [];
+
+let selectE = {type: 'E', result: 0};
+let selectI = {type: 'I', result: 0};
+
+let selectS = {type: 'S', result: 0};
+let selectN = {type: 'N', result: 0};
+
+let selectT = {type: 'T', result: 0};
+let selectF = {type: 'F', result: 0};
+
+let selectJ = {type: 'J', result: 0};
+let selectP = {type: 'P', result: 0};
+
+
+// let selectSN;
+// let selectTF;
+// let selectJP;
 
 /*
 EI (1, 2)
@@ -71,22 +84,50 @@ function addAnswer(answerText, qIdx, idx){
         let children = document.querySelectorAll('.answerList');
 
         let targetWhich = qnaList[qIdx].which;
-        let target = qnaList[qIdx].a[idx].type;
+        let targetType = qnaList[qIdx].a[idx].type;
+        let targetScore = parseInt(qnaList[qIdx].a[idx].score);
+
+        // console.log(targetScore);
 
         if(targetWhich === 'EI') {
-            selectEI.push(target);
-        } else if(targetWhich === 'SN') {
-            selectSN.push(target);
-        } else if(targetWhich === 'TF') {
-            selectTF.push(target);
-        } else if(targetWhich === 'JP') {
-            selectJP.push(target);
+            if(targetType == 1) {
+                selectE.result = selectE.result + targetScore;
+            } else{
+                selectI.result = selectI.result + targetScore;
+            }
+        }
+
+        if(targetWhich === 'SN') {
+            if(targetType == 1) {
+                selectS.result = selectS.result + targetScore;
+            } else{
+                selectN.result = selectN.result + targetScore;
+            }
+        }
+
+        if(targetWhich === 'TF') {
+            if(targetType == 1) {
+                selectT.result = selectT.result + targetScore;
+            } else{
+                selectF.result = selectF.result + targetScore;
+            }
+        }
+
+        if(targetWhich === 'JP') {
+            if(targetType == 1) {
+                selectJ.result = selectJ.result + targetScore;
+            } else{
+                selectP.result = selectP.result + targetScore;
+            }
         }
 
         for(let i = 0; i < children.length; i++) {
             children[i].disabled = true;
             children[i].style.display = 'none';
         }
+
+        // console.log(selectE);
+        // console.log(selectI);
 
         goNext(qIdx+1);
     });
@@ -112,13 +153,40 @@ function goResult(){
 }
 
 function calResult(){
-    const EIresul = String(Math.max(...selectEI));
-    const SNresul = String(Math.max(...selectSN));
-    const TFresul = String(Math.max(...selectTF));
-    const JPresul = String(Math.max(...selectJP));
 
-    let resul = EIresul + SNresul + TFresul + JPresul;
-    return resul;
+    let EIresulNum = '';
+    let SNresulNum = '';
+    let TFresulNum = '';
+    let JPresulNum = '';
+
+    if(selectE.result > selectI.result) {
+        EIresulNum = selectE.type;
+    } else {
+        EIresulNum = selectI.type;
+    }
+
+    if(selectS.result > selectN.result) {
+        SNresulNum = selectS.type;
+    } else {
+        SNresulNum = selectN.type;
+    }
+
+    if(selectT.result > selectF.result) {
+        TFresulNum = selectT.type;
+    } else {
+        TFresulNum = selectF.type;
+    }
+
+    if(selectE.result > selectI.result) {
+        JPresulNum = selectJ.type;
+    } else {
+        JPresulNum = selectP.type;
+    }
+
+    console.log(EIresulNum + SNresulNum + TFresulNum + JPresulNum);
+    let allResult = EIresulNum + SNresulNum + TFresulNum + JPresulNum;
+
+    return allResult;
 }
 
 function setResult(){
