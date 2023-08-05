@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
 
     <title>십이간지 연애유형</title>
 
-    <link rel="stylesheet" href="./style/import.css">
+    <link rel="stylesheet" href="/style/import.css">
     
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
 
@@ -42,11 +42,10 @@
     <div class="all-wrapper">
         <header class="header">
             <div class="header-wrap">
-                <div class="list-type01">
+                <div class="list-wrap list-type01">
                     <ul class="list">
                         <li class="item">
-                            <a href="/" class="item-cont" title="메인페이지 가기">
-                                <!-- solid style -->
+                            <a href="/index.html" class="item-cont" title="메인페이지 가기">
                                 <i class="fa-solid fa-house clr-white"></i>
                             </a>
                         </li>
@@ -54,48 +53,63 @@
                 </div>
             </div>
         </header>
-
-        <main>
-            <!-- <a href="/pages/tanhulu.html">fsdfsd</a> -->
-            
-            <div class="list-type01 top-list-wrap">
-                <ul class="list scrll_wrap">
-                    <li class="item active">
-                        <a href="/index.html" class="item-cont">
-                            <i class="fa-solid fa-heart"></i>
-                            짝사랑 테스트
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="/index.html" class="item-cont">
-                            <i class="fa-solid fa-heart"></i>
-                            연애 테스트
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="/index.html" class="item-cont">
-                            <i class="fa-solid fa-seedling"></i>
-                            재미 테스트
-                        </a>
-                    </li>
-                </ul>
+        
+        <section id="main">
+            <div>
+                <img src="./img/dffdssdf.png" alt="" style="display: block; width: 100%;">
             </div>
 
-            <div class="list-type02">
-                <ul class="list">
-                    <li class="item">
-                        <a href="#" class="item-cont">
-                            탕후루 테스트
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="item-cont">
-                            탕후루 테스트
-                        </a>
-                    </li>
-                </ul>
+            <div class="btn-wrap">
+                <div class="btn-row">
+                    <button type="button" onclick="begin()" class="btn">
+                        <span class="btn-text">시작하기</span>
+                    </button>
+                </div>
             </div>
-        </main> 
+        </section>
+    
+        <section id="qna">
+            <span class="num-box"></span>
+            <!-- 질문 -->
+            <div class="qBox">
+            </div>
+
+            <!-- 대답 리스트 -->
+            <div class="answerBox">
+                
+            </div>
+
+            <div class="status">
+                <div class="statusBar"></div>
+            </div>
+        </section>
+    
+        <section id="result">
+            <h1>당신의 결과는?</h1>
+    
+            <div class="resultName">
+    
+            </div>
+    
+            <div id="resultImg">
+            </div>
+    
+            <div class="resultDesc">
+                
+            </div>
+    
+            <div class="btn-wrap">
+                <div class="btn-row">
+                    <button type="button" id="kakaotalk-sharing-btn" class="btn">
+                        <span class="btn-text">공유하기</span>
+                    </button>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <script src="/script/data.js" charset="utf-8"></script>
+    <script src="/script/main.js" charset="utf-8"></script>
+    <script src="/script/share.js" charset="utf-8"></script>
 </body>
 </html>
