@@ -258,10 +258,10 @@ img {
   align-items: center;
   padding: 20px;
   position: relative;
-  padding-top: 70px;
+  padding-top: 210px;
   background-image: url("/img/1.png");
-  background-size: 90px 90px;
-  background-position: top center;
+  background-size: center;
+  background-position: center 100px;
   background-repeat: no-repeat;
 }
 .no-data-wrap .no-data .txt_01 {
