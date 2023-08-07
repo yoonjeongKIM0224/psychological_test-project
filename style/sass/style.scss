@@ -26,6 +26,11 @@ button {
     cursor: pointer;
 }
 
+img {
+    display: block;
+    width: 100%;
+}
+
 .clr-white {
     color: #fff!important;
 }
@@ -157,6 +162,7 @@ button {
 
             .item-cont {
                 display: block;
+                height: 100%;
                 padding: 16px;
 
                 [class*="fa"] {
@@ -279,5 +285,46 @@ button {
     > .btn-text {
         display:block;
         color:#fff;
+    }
+}
+
+.test-area {
+    padding: 20px;
+}
+
+.no-data-wrap {
+    display: block;
+
+    .no-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+        padding-top: 70px;
+        background-image: url('/img/1.png');
+        background-size: 90px 90px;
+        background-position: top center;
+        background-repeat: no-repeat;
+    
+        .txt_01 {
+            font-size: 18px;
+        }
+    
+        .txt_02 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+    
+        [class*="txt_"] {
+            margin-top: 8px;
+        }
+    }
+}
+
+.top-list-wrap {
+    + *  {
+        padding-top: 0;
+        margin-top: 0;
     }
 }

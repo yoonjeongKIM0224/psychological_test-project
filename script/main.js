@@ -154,63 +154,69 @@ function goResult(){
 
 function calResult(){
 
+    
     let EIresulNum = '';
     let SNresulNum = '';
     let TFresulNum = '';
     let JPresulNum = '';
-
+    
     if(selectE.result > selectI.result) {
         EIresulNum = selectE.type;
     } else {
         EIresulNum = selectI.type;
     }
-
+    
     if(selectS.result > selectN.result) {
         SNresulNum = selectS.type;
     } else {
         SNresulNum = selectN.type;
     }
-
+    
     if(selectT.result > selectF.result) {
         TFresulNum = selectT.type;
     } else {
         TFresulNum = selectF.type;
     }
-
+    
     if(selectE.result > selectI.result) {
         JPresulNum = selectJ.type;
     } else {
         JPresulNum = selectP.type;
     }
-
-    console.log(EIresulNum + SNresulNum + TFresulNum + JPresulNum);
-    let allResult = EIresulNum + SNresulNum + TFresulNum + JPresulNum;
+    
+    let allResult = EIresulNum + SNresulNum + TFresulNum + JPresulNum; //영어로 나옴
 
     return allResult;
 }
 
 function setResult(){
     let point = calResult(); //calResult의 리턴값
-
+    let infoPoint = '';
+    
     for(let i = 0; i < infoList.length; i++) {
-        if(infoList[i].num == point) {
-            point = infoList[i];
-            console.log(point);
+        if(infoList[i].name == point) {
+            infoPoint = infoList[i];
+            // console.log(point);
+
             break;
         }
     }
 
     const resultName = document.querySelector('.resultName'); //결과 제목 요소
-    resultName.innerHTML = point.name; //결과 제목 요소에 텍스트 넣기
+    resultName.innerHTML = point; //결과 제목 요소에 텍스트 넣기
+
+    // console.log(resultName)
 
     const resultDesc = document.querySelector('.resultDesc');
-    resultDesc.innerHTML = point.desc;
+    resultDesc.innerHTML = infoPoint.desc;
+
+    console.log(resultDesc)
     
     const imgDiv = document.querySelector('#resultImg'); //만든 img 태그 넣을 부모 요소
     let resultImg = document.createElement('img'); //img 태그 만들기
-    let imgURL = `img/image-${point.name}.png`; //동일한 주소 변수 생성
+    let imgURL = `/img/image-${infoPoint.name}.png`; //동일한 주소 변수 생성
     resultImg.src = imgURL; //img 주소(src)
-    resultImg.alt = point.name; //img 대체텍스트(alt)
+    resultImg.alt = infoPoint.name; //img 대체텍스트(alt)
     resultImg.classList.add('img-fluid'); //img 클래스
     imgDiv.appendChild(resultImg); //imgDiv(태그 넣을 부모 요소)에 만든 img 태그 넣기
 }
