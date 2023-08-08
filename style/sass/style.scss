@@ -294,6 +294,7 @@ img {
 
 .no-data-wrap {
     display: block;
+    padding: 20px;
 
     .no-data {
         display: flex;
@@ -301,10 +302,10 @@ img {
         align-items: center;
         padding: 20px;
         position: relative;
-        padding-top: 210px;
-        background-image: url('/img/1.png');
-        background-size: center;
-        background-position: center 100px;
+        padding-top: 240px;
+        background-image: url('/img/rabbit.png');
+        background-size: 100px;
+        background-position: center 130px;
         background-repeat: no-repeat;
     
         .txt_01 {
