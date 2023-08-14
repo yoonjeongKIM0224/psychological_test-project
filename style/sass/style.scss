@@ -39,6 +39,11 @@ img {
     overflow-y: auto;
 }
 
+.img_wrap {
+    display: block;
+    width: 100%;
+}
+
 /* Content Style */
 #qna {
     display:none;
@@ -101,7 +106,7 @@ img {
 .list-type01 {
     display: block;
 
-    .list {
+    > .list {
         display: flex;
 
         > .item {
@@ -145,16 +150,16 @@ img {
     display: block;
     padding: 0 20px;
 
-    .list {
+    > .list {
         display: block;
 
         > .item {
             display: block;
             width: 100%;
-            height: 160px;
-            border-radius: 8px;
-            border: 2px solid #000;
-            box-shadow: 3px 5px 0px 0px #000;
+            border-radius: 20px;
+            // border: 2px solid #000;
+            // box-shadow: 3px 5px 0px 0px #000;
+            background-color: #fff;
 
             + .item {
                 margin-top: 24px;
@@ -163,15 +168,19 @@ img {
             .item-cont {
                 display: block;
                 height: 100%;
-                padding: 16px;
-
+                padding: 18px;
+                
                 [class*="fa"] {
                     font-size: 20px;
                 }
             }
 
-            * {
+            *:not(.btn-text) {
                 color: inherit;
+            }
+
+            .btn-wrap {
+                padding: 0 18px;
             }
         }
 
@@ -183,6 +192,47 @@ img {
                 .item-cont {
                     white-space: nowrap;
                 }
+            }
+        }
+    }
+
+    .img_wrap {
+        background-color: red;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .txt_area {
+        margin-top: 14px;
+    }
+}
+
+.list-type03 {
+    display: block;
+
+    > .list {
+        display: flex;
+        background-color: red;
+        border-radius: 100px;
+
+        > .item {
+            display: block;
+
+            .item-cont {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 8px;
+            }
+
+            + .item {
+                margin-left: 6px;
+                padding-left: 6px;
+                border-left: 1px solid #fff;
+            }
+
+            [class*="fa"] {
+                font-size: 14px!important;
             }
         }
     }
@@ -290,6 +340,10 @@ img {
 
 .test-area {
     padding: 20px;
+
+    .list-type02 {
+        padding: 0;
+    }
 }
 
 .no-data-wrap {
@@ -327,5 +381,17 @@ img {
     + *  {
         padding-top: 0;
         margin-top: 0;
+    }
+}
+
+.txt_area {
+    .tit {
+        font-size: 18px;
+    }
+
+    .desc {
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: normal;
     }
 }

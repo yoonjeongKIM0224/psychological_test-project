@@ -195,7 +195,7 @@ img {
   border-left: 1px solid #fff;
 }
 .list-type03 > .list > .item [class*=fa] {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .top-list-wrap {
