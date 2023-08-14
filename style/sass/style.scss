@@ -7,6 +7,13 @@
 /* reset */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     padding:0;
     margin:0;
@@ -42,6 +49,21 @@ img {
 .img_wrap {
     display: block;
     width: 100%;
+    position: relative;
+
+    .list-type03 {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.test-tit {
+    padding-top: 40px;
+    font-size: 24px;
+    font-family: 'S-CoreDream-3Light';
+    text-align: center;
 }
 
 /* Content Style */
@@ -136,10 +158,27 @@ img {
         &.scrll_wrap {
             > .item {
                 + .item {
-                    margin-left: 32px;
+                    margin-left: 20px;
                 }
                 .item-cont {
                     white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    &.round {
+        > .list {
+            .item {
+                background-color: #000;
+                border-radius: 100px;
+
+                .item-cont {
+                    padding: 4px 12px;
+                }
+
+                &.active {
+                    color: #fff;
                 }
             }
         }
@@ -165,18 +204,18 @@ img {
                 margin-top: 24px;
             }
 
-            .item-cont {
+            > .item-cont {
                 display: block;
                 height: 100%;
                 padding: 18px;
                 
-                [class*="fa"] {
+                > [class*="fa"] {
                     font-size: 20px;
                 }
-            }
 
-            *:not(.btn-text) {
-                color: inherit;
+                > *:not(.btn-text) {
+                    color: inherit;
+                }
             }
 
             .btn-wrap {
@@ -212,7 +251,7 @@ img {
 
     > .list {
         display: flex;
-        background-color: red;
+        background-color: #fff;
         border-radius: 100px;
 
         > .item {
@@ -222,17 +261,17 @@ img {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 8px;
+                height: 100%;
+                padding: 6px 8px;
+                font-size: 12px;
+
+                > * {
+                    font-size: inherit;
+                }
             }
 
             + .item {
-                margin-left: 6px;
-                padding-left: 6px;
                 border-left: 1px solid #fff;
-            }
-
-            [class*="fa"] {
-                font-size: 14px!important;
             }
         }
     }
@@ -244,11 +283,10 @@ img {
     top: 0;
     left: 0;
     padding: 20px;
-    background-color: #fff;
 
     .list {
         .item {
-            color: #ddd;
+            color: #ccc;
 
             .item-cont {
                 display: flex;
@@ -340,9 +378,17 @@ img {
 
 .test-area {
     padding: 20px;
+    background: linear-gradient(180deg, rgb(186, 63, 51) 12%, rgb(184, 90, 46) 20%, rgb(188, 102, 54) 31%, rgba(188, 102, 54, 0) 90%);;
 
     .list-type02 {
         padding: 0;
+        padding-top: 40px;
+
+        > .list {
+            > .item {
+                padding-bottom: 20px;
+            }
+        }
     }
 }
 
