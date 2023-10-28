@@ -402,7 +402,7 @@ img {
 }
 #resultImg > .name {
   position: absolute;
-  bottom: 41px;
+  bottom: 50px;
   left: 50%;
   transform: translate(-50%);
   color: #fff;

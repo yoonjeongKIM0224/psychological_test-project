@@ -31,6 +31,7 @@ TF (1, 2)
 JP (1, 2)
 */
 
+
 //*시작하는 함수
 function start(){
     main.classList.add('inp_time');
@@ -223,7 +224,7 @@ function setResult(){
     
     const imgDiv = document.querySelector('#resultImg'); //만든 img 태그 넣을 부모 요소
     let resultImg = document.createElement('img'); //img 태그 만들기
-    let imgURL = `/img/image-${infoPoint.name}.png`; //동일한 주소 변수 생성
+    let imgURL = `/img/image-${infoPoint.name}.svg`; //동일한 주소 변수 생성
     resultImg.src = imgURL; //img 주소(src)
     resultImg.alt = infoPoint.name; //img 대체텍스트(alt)
     resultImg.classList.add('img-fluid'); //img 클래스
