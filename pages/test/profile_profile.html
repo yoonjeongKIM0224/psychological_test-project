@@ -56,41 +56,55 @@
         
         <div class="test-area">
             <section id="main">
-                <h2 class="test-tit">Tanhulu Test</h2>
-                <div class="list-type02">
-                    <div class="list">
-                        <div class="item">
-                            <div href="/pages/test/tanhulu.html" class="item-cont">
-                                <div class="img_wrap" style="height: 200px;">
-                                    <!-- <img src="" alt="" class="img" style="height: 140px;"> -->
-                                    <div class="list-type03">
-                                        <ul class="list">
-                                            <li class="item">
-                                                <a href="#" class="item-cont">
-                                                    <i class="fa-solid fa-link"></i>
-                                                </a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="#" class="item-cont">
-                                                    kakao
-                                                </a>
-                                            </li>
-                                        </ul>
+                <div class="de-area">
+                    <h2 class="test-tit">메신저 프로필 테스트...♥</h2>
+                    <div class="list-type02">
+                        <div class="list">
+                            <div class="item">
+                                <div href="/pages/test/profile_profile.html" class="item-cont">
+                                    <div class="img_wrap" style="height: 500px;">
+                                        <!-- <img src="" alt="" class="img" style="height: 140px;"> -->
+                                        <div class="list-type03">
+                                            <ul class="list">
+                                                <li class="item">
+                                                    <a href="#" class="item-cont">
+                                                        <i class="fa-solid fa-link"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#" class="item-cont">
+                                                        kakao
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="txt_area">
+                                        <span class="tit">메신저 프로필 테스트</span>
+                                        <p class="desc">짝사랑할 때 내 메신저 프로필은 어떨까?</p>
                                     </div>
                                 </div>
-                                <div class="txt_area">
-                                    <span class="tit">짝사랑 탕후루 테스트</span>
-                                    <p class="desc">탕후루로 보는 내 짝사랑은?</p>
+    
+                                <div class="btn-wrap">
+                                    <div class="btn-row">
+                                        <button type="button" onclick="start()" class="btn">
+                                            <span class="btn-text">시작하기</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="btn-wrap">
-                                <div class="btn-row">
-                                    <button type="button" onclick="begin()" class="btn">
-                                        <span class="btn-text">시작하기</span>
-                                    </button>
-                                </div>
-                            </div>
+                <div class="inp-area">
+                    <label for="inp_name" class="lbe">프로필에 들어갈 이름을 입력해 주세요!</label>
+                    <input type="text" id="inp_name" placeholder="이름을 적어주세요!" title="프로필 이름을 적어주세요!" class="inp01">
+                    <div class="btn-wrap">
+                        <div class="btn-row">
+                            <button type="button" onclick="begin()" class="btn">
+                                <span class="btn-text">다 입력했어요. 😊</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -120,6 +134,7 @@
                 </div>
         
                 <div id="resultImg">
+                    <span class="name"></span>
                 </div>
         
                 <div class="resultDesc">

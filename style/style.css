@@ -27,6 +27,10 @@
   word-break: break-all;
 }
 
+body {
+  background-color: #e4e4e4;
+}
+
 button {
   cursor: pointer;
 }
@@ -59,7 +63,6 @@ img {
 .test-tit {
   padding-top: 40px;
   font-size: 24px;
-  font-family: "S-CoreDream-3Light";
   text-align: center;
 }
 
@@ -207,8 +210,6 @@ img {
 }
 .list-type03 > .list {
   display: flex;
-  background-color: #ddd;
-  border-radius: 100px;
 }
 .list-type03 > .list > .item {
   display: block;
@@ -220,12 +221,14 @@ img {
   height: 100%;
   padding: 6px 8px;
   font-size: 12px;
+  background-color: #fff;
+  border-radius: 100px;
 }
 .list-type03 > .list > .item .item-cont > * {
   font-size: inherit;
 }
 .list-type03 > .list > .item + .item {
-  border-left: 1px solid #fff;
+  margin-left: 8px;
 }
 
 .top-list-wrap {
@@ -316,7 +319,6 @@ img {
 
 .test-area {
   padding: 20px;
-  background: linear-gradient(180deg, rgb(186, 63, 51) 12%, rgb(184, 90, 46) 20%, rgb(188, 102, 54) 31%, rgba(188, 102, 54, 0) 90%);
 }
 .test-area .list-type02 {
   padding: 0;
@@ -365,4 +367,45 @@ img {
   margin-top: 4px;
   font-size: 16px;
   font-weight: normal;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.inp-area {
+  display: none;
+}
+.inp-area .btn-wrap {
+  margin-top: 18px;
+}
+
+#main.inp_time .de-area {
+  display: none;
+}
+#main.inp_time .inp-area {
+  display: block;
+}
+
+.lbe {
+  font-size: 18px;
+}
+
+.inp01 {
+  display: block;
+  width: 100%;
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+#resultImg {
+  position: relative;
+}
+#resultImg > .name {
+  position: absolute;
+  bottom: 41px;
+  left: 50%;
+  transform: translate(-50%);
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

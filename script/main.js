@@ -2,6 +2,9 @@ const main = document.querySelector('#main');
 const qna = document.querySelector('#qna');
 const result = document.querySelector('#result');
 const endPoint = qnaList.length;
+let peopleNameInp = document.querySelector('#inp_name');
+let peopleName = null;
+// let peopleName = document.querySelector('#resultImg > .name');
 
 
 let selectE = {type: 'E', result: 0};
@@ -29,7 +32,13 @@ JP (1, 2)
 */
 
 //*시작하는 함수
+function start(){
+    main.classList.add('inp_time');
+}
+
 function begin(){
+    peopleName = peopleNameInp.value;
+
     main.style.animation = "fadeOut 0.5s"; // main 사라지는 중
 
     setTimeout(()=>{ // [main 사라지는 중]의 중간 시점에서 시작
@@ -219,4 +228,6 @@ function setResult(){
     resultImg.alt = infoPoint.name; //img 대체텍스트(alt)
     resultImg.classList.add('img-fluid'); //img 클래스
     imgDiv.appendChild(resultImg); //imgDiv(태그 넣을 부모 요소)에 만든 img 태그 넣기
+    // peopleName
+    document.querySelector('#resultImg > .name').innerText = peopleName;
 }
