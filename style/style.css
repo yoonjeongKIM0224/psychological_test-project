@@ -402,10 +402,11 @@ img {
 }
 #resultImg > .name {
   position: absolute;
-  bottom: 50px;
+  bottom: 195px;
   left: 50%;
   transform: translate(-50%);
   color: #fff;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */
