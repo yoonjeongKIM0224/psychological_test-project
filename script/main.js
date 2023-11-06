@@ -4,7 +4,6 @@ const result = document.querySelector('#result');
 const endPoint = qnaList.length;
 let peopleNameInp = document.querySelector('#inp_name');
 let peopleName = null;
-// let peopleName = document.querySelector('#resultImg > .name');
 
 
 let selectE = {type: 'E', result: 0};
@@ -212,16 +211,17 @@ function setResult(){
         }
     }
 
+    console.dir(Boolean(result.dataset.testname == 'talk_profile'));
+
+    if(result.dataset.testname == 'talk_profile') {
+        document.querySelector('#resultImg > .name').innerText = peopleName;
+    }
+
+    
     const resultName = document.querySelector('.resultName'); //결과 제목 요소
     resultName.innerHTML = point; //결과 제목 요소에 텍스트 넣기
-
-    // console.log(resultName)
-
     const resultDesc = document.querySelector('.resultDesc');
     resultDesc.innerHTML = infoPoint.desc;
-
-    console.log(resultDesc)
-    
     const imgDiv = document.querySelector('#resultImg'); //만든 img 태그 넣을 부모 요소
     let resultImg = document.createElement('img'); //img 태그 만들기
     let imgURL = `/img/image-${infoPoint.name}.svg`; //동일한 주소 변수 생성
@@ -229,6 +229,9 @@ function setResult(){
     resultImg.alt = infoPoint.name; //img 대체텍스트(alt)
     resultImg.classList.add('img-fluid'); //img 클래스
     imgDiv.appendChild(resultImg); //imgDiv(태그 넣을 부모 요소)에 만든 img 태그 넣기
-    // peopleName
-    document.querySelector('#resultImg > .name').innerText = peopleName;
+
+    // console.log(point);
+    // console.log(infoPoint.desc);
+    // console.log(infoPoint.name);
+    // console.log(peopleName);
 }

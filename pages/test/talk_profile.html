@@ -97,7 +97,7 @@
                     </div>
                 </div>
 
-                <form action="#" class="inp-area">
+                <div class="inp-area">
                     <label for="inp_name" class="lbe">프로필에 들어갈 이름을 입력해 주세요!</label>
                     <input type="text" id="inp_name" placeholder="이름을 적어주세요!" title="프로필 이름을 적어주세요!" class="inp01">
                     <div class="btn-wrap">
@@ -107,7 +107,7 @@
                             </button>
                         </div>
                     </div>
-                </ㄹ>
+                </div>
             </section>
         
             <section id="qna">
@@ -126,20 +126,18 @@
                 </div>
             </section>
         
-            <section id="result">
+            <section id="result" data-testName="talk_profile">
                 <h1>당신의 결과는?</h1>
-        
-                <div class="resultName">
-        
+
+
+                <div class="talk_profile_wrap"> <!-- 배경이미지 -->
+                    <div class="profile_img_wrap"> <!-- 프로필 박스 -->
+                        <span class="profile_img"></span> <!-- 얼굴 사진 -->
+                        <span class="profile_name"></span> <!-- 본인 이름 -->
+                    </div>
                 </div>
-        
-                <div id="resultImg">
-                    <span class="name"></span>
-                </div>
-        
-                <div class="resultDesc">
-                    
-                </div>
+
+                <div class="result_txt"></div>
         
                 <div class="btn-wrap">
                     <div class="btn-row">
