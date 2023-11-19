@@ -239,7 +239,7 @@ img {
   padding: 20px;
 }
 .top-list-wrap .list .item {
-  color: #ccc;
+  color: #a9a9a9;
 }
 .top-list-wrap .list .item .item-cont {
   display: flex;
@@ -313,7 +313,7 @@ img {
   background-color: #000;
 }
 .btn > .btn-text {
-  display: block;
+  display: inline-block;
   color: #fff;
 }
 
@@ -375,6 +375,18 @@ img {
 .inp-area .btn-wrap {
   margin-top: 18px;
 }
+.inp-area .form_msg {
+  display: none;
+}
+.inp-area .form_msg.on {
+  display: block;
+}
+.inp-area .form_msg.error {
+  color: #ff5a5a;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
 
 #main.inp_time .de-area {
   display: none;
@@ -402,17 +414,42 @@ img {
 }
 #resultImg > .name {
   position: absolute;
-  top: 154px;
-  left: 62px;
+  top: 33%;
+  left: 12%;
   color: #fff;
   font-weight: 400;
 }
 #resultImg > .name.name02 {
-  top: 24px;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
   font-weight: 500;
 }
+
+#kakaotalk-sharing-btn .btn-text {
+  position: relative;
+  padding-left: 28px;
+}
+#kakaotalk-sharing-btn .btn-text::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url('/img/icon/kakao-logo.svg');
+  background-size: cover;
+}
+
+.tit01 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mt40 {
+  margin-top: 40px;
+} 
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 Kakao.Share.createDefaultButton({
-container: '#kakaotalk-sharing-btn',
+container: '#kakaotalk-sharing-btn, #kakao2',
 objectType: 'feed',
 content: {
     title: '십이간지 연애유형',

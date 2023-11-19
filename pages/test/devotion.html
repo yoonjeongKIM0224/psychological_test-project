@@ -45,7 +45,7 @@
                 <div class="list-wrap list-type01">
                     <ul class="list">
                         <li class="item">
-                            <a href="/index.html" class="item-cont" title="메인페이지 가기">
+                            <a href="/pages/main/all.html" class="item-cont" title="메인페이지 가기">
                                 <i class="fa-solid fa-house clr-white"></i>
                             </a>
                         </li>
@@ -57,22 +57,22 @@
         <div class="test-area">
             <section id="main">
                 <div class="de-area">
-                    <h2 class="test-tit">메신저 프로필 테스트...♥</h2>
+                    <h2 class="test-tit">헌신 테스트 🫡</h2>
                     <div class="list-type02">
                         <div class="list">
                             <div class="item">
                                 <div href="/pages/test/devotion.html" class="item-cont">
-                                    <div class="img_wrap" style="height: 500px;">
-                                        <!-- <img src="" alt="" class="img" style="height: 140px;"> -->
+                                    <div class="img_wrap">
+                                        <img src="/img/test/devotion-thumbnail02.svg" alt="">
                                         <div class="list-type03">
                                             <ul class="list">
-                                                <li class="item">
+                                                <!-- <li class="item">
                                                     <a href="#" class="item-cont">
                                                         <i class="fa-solid fa-link"></i>
                                                     </a>
-                                                </li>
+                                                </li> -->
                                                 <li class="item">
-                                                    <a href="#" class="item-cont">
+                                                    <a href="#" class="item-cont" id="kakao2">
                                                         kakao
                                                     </a>
                                                 </li>
@@ -80,8 +80,8 @@
                                         </div>
                                     </div>
                                     <div class="txt_area">
-                                        <span class="tit">메신저 프로필 테스트</span>
-                                        <p class="desc">짝사랑할 때 내 메신저 프로필은 어떨까?</p>
+                                        <span class="tit">나는 상대방의 헌신에 어떨까?</span>
+                                        <p class="desc">누군가 "난 널 위해서 죽을 수 있어."라고 한다면?</p>
                                     </div>
                                 </div>
     
@@ -100,6 +100,7 @@
                 <div class="inp-area">
                     <label for="inp_name" class="lbe">프로필에 들어갈 이름을 입력해 주세요!</label>
                     <input type="text" id="inp_name" placeholder="이름을 적어주세요!" title="프로필 이름을 적어주세요!" class="inp01">
+                    <span class="form_msg error">* 간단한 닉네임이라도 적어주세요.</span>
                     <div class="btn-wrap">
                         <div class="btn-row">
                             <button type="button" onclick="begin()" class="btn">
@@ -127,7 +128,7 @@
             </section>
         
             <section id="result" data-testName="devotion">
-                <h1>당신의 결과는?</h1>
+                <h1 class="tit01">당신의 대답은?</h1>
         
                 <div class="resultName" style="display: none;"></div>
         
@@ -138,7 +139,7 @@
         
                 <div class="resultDesc" style="display: none;"></div>
         
-                <div class="btn-wrap">
+                <div class="btn-wrap mt40">
                     <div class="btn-row">
                         <button type="button" id="kakaotalk-sharing-btn" class="btn">
                             <span class="btn-text">카카오톡 공유하기</span>

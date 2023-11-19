@@ -30,31 +30,34 @@ TF (1, 2)
 JP (1, 2)
 */
 
-
 //*시작하는 함수
 function start(){
     main.classList.add('inp_time');
 }
 
 function begin(){
-    peopleName = peopleNameInp.value;
+    if(!peopleNameInp.value) {
+        document.querySelector('.inp-area .form_msg').classList.add('on');
+    } else {
+        peopleName = peopleNameInp.value;
 
-    main.style.animation = "fadeOut 0.5s"; // main 사라지는 중
+        main.style.animation = "fadeOut 0.5s"; // main 사라지는 중
 
-    setTimeout(()=>{ // [main 사라지는 중]의 중간 시점에서 시작
-        qna.style.animation = "fadeIn 0.5s"; // qna 생기는 중
-        
-        setTimeout(()=>{ // [main 사라지는 중]의 끝 시점, [qna 생기는 중]의 중간에서 시작
-            main.style.display = "none"; // main none
-            qna.style.display = "block"; // qna block
+        setTimeout(()=>{ // [main 사라지는 중]의 중간 시점에서 시작
+            qna.style.animation = "fadeIn 0.5s"; // qna 생기는 중
+            
+            setTimeout(()=>{ // [main 사라지는 중]의 끝 시점, [qna 생기는 중]의 중간에서 시작
+                main.style.display = "none"; // main none
+                qna.style.display = "block"; // qna block
+            }, 240); // 0.24초
+            
+            let qIdx = 0;
+            goNext(qIdx);
+
         }, 240); // 0.24초
-        
-        let qIdx = 0;
-        goNext(qIdx);
 
-    }, 240); // 0.24초
-
-    // 여기서 실행하면 setTimeout를 거치지 않고 실행하게 됨
+        // 여기서 실행하면 setTimeout를 거치지 않고 실행하게 됨
+    }
 }
 
 function goNext(qIdx){ // 처음은 qIdx = 0
@@ -225,7 +228,7 @@ function setResult(){
     resultDesc.innerHTML = infoPoint.desc;
     const imgDiv = document.querySelector('#resultImg'); //만든 img 태그 넣을 부모 요소
     let resultImg = document.createElement('img'); //img 태그 만들기
-    let imgURL = `/img/image-${result.dataset.testname}-${infoPoint.name}.svg`; //동일한 주소 변수 생성
+    let imgURL = `/img/test/image-${result.dataset.testname}-${infoPoint.name}.svg`; //동일한 주소 변수 생성
     resultImg.src = imgURL; //img 주소(src)
     resultImg.alt = infoPoint.name; //img 대체텍스트(alt)
     resultImg.classList.add('img-fluid'); //img 클래스

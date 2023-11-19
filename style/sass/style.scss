@@ -290,7 +290,7 @@ img {
 
     .list {
         .item {
-            color: #ccc;
+            color: #a9a9a9;
 
             .item-cont {
                 display: flex;
@@ -375,7 +375,7 @@ img {
     background-color:#000;
 
     > .btn-text {
-        display:block;
+        display:inline-block;
         color:#fff;
     }
 }
@@ -452,6 +452,20 @@ img {
     .btn-wrap {
         margin-top: 18px;
     }
+
+    .form_msg {
+        display: none;
+
+        &.on {
+            display: block;
+        }
+
+        &.error {
+            color: #ff5a5a;
+            margin-top: 8px;
+            padding-left: 4px;
+        }
+    }
 }
 
 #main.inp_time {
@@ -483,17 +497,45 @@ img {
 
     > .name {
         position: absolute;
-        top: 154px;
-        left: 62px;
+        top: 33%;
+        left: 12%;
         color: #fff;
         font-weight: 400;
 
         &.name02 {
-            top: 24px;
+            top: 5%;
             left: 50%;
             transform: translateX(-50%);
             font-size: 20px;
             font-weight: 500;
         }
     }
+}
+
+#kakaotalk-sharing-btn {
+    .btn-text {
+        position: relative;
+        padding-left: 28px;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-image: url('/img/icon/kakao-logo.svg');
+            background-size: cover;
+        }
+    }
+}
+
+.tit01 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.mt40 {
+    margin-top: 40px;
 }
