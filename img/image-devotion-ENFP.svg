@@ -2,6 +2,13 @@
 <rect width="666" height="666" fill="#5B5B62"/>
 <rect width="665" height="666" fill="#5B5B62"/>
 <rect width="666" height="110" fill="black" fill-opacity="0.11"/>
+<line x1="37.2929" y1="54.2929" x2="51.2929" y2="40.2929" stroke="white" stroke-width="2"/>
+<line x1="38.7071" y1="54.2929" x2="52.7071" y2="68.2929" stroke="white" stroke-width="2"/>
+<circle cx="558" cy="52" r="9" stroke="white" stroke-width="2"/>
+<line x1="564.707" y1="58.2929" x2="573.707" y2="67.2929" stroke="white" stroke-width="2"/>
+<line x1="607" y1="44" x2="636" y2="44" stroke="white" stroke-width="2"/>
+<line x1="607" y1="54" x2="636" y2="54" stroke="white" stroke-width="2"/>
+<line x1="607" y1="64" x2="636" y2="64" stroke="white" stroke-width="2"/>
 <rect x="14" y="232" width="54" height="54" rx="21" fill="#D9D9D9"/>
 <circle cx="41.5006" cy="251.786" r="5.78571" fill="#5B5B62"/>
 <path d="M55 272.518C49.4554 272.518 48.9558 272.518 41.5 272.518C34.0442 272.518 36.4375 272.518 28 272.518C28 265.062 34.0442 259.018 41.5 259.018C48.9558 259.018 55 265.062 55 272.518Z" fill="#5B5B62"/>

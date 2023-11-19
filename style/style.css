@@ -402,10 +402,16 @@ img {
 }
 #resultImg > .name {
   position: absolute;
-  bottom: 285px;
-  left: 50%;
-  transform: translate(-50%);
+  top: 154px;
+  left: 62px;
   color: #fff;
+  font-weight: 400;
+}
+#resultImg > .name.name02 {
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
   font-weight: 500;
 }
 

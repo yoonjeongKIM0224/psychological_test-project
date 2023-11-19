@@ -214,7 +214,9 @@ function setResult(){
     console.dir(Boolean(result.dataset.testname == 'devotion'));
 
     if(result.dataset.testname == 'devotion') {
-        document.querySelector('#resultImg > .name').innerText = peopleName;
+        document.querySelectorAll('#resultImg > .name').forEach(function(item){
+            item.innerText = peopleName;
+        });
     }
     
     const resultName = document.querySelector('.resultName'); //결과 제목 요소

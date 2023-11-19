@@ -486,6 +486,14 @@ img {
         top: 154px;
         left: 62px;
         color: #fff;
-        font-weight: 500;
+        font-weight: 400;
+
+        &.name02 {
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: 500;
+        }
     }
 }
