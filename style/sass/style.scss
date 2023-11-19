@@ -497,39 +497,40 @@ img {
 
     > .name {
         position: absolute;
-        top: 33%;
-        left: 12%;
+        top: 16vh;
+        left: 15%;
         color: #fff;
         font-weight: 400;
-
+        font-size: 14px;
+        
         &.name02 {
-            top: 5%;
+            top: 8%;
             left: 50%;
-            transform: translateX(-50%);
             font-size: 20px;
             font-weight: 500;
+            transform: translate(-50%, -50%);
         }
     }
 }
 
-#kakaotalk-sharing-btn {
-    .btn-text {
-        position: relative;
-        padding-left: 28px;
+// #kakaotalk-sharing-btn {
+//     .btn-text {
+//         position: relative;
+//         padding-left: 28px;
 
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 3px;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            background-image: url('/img/icon/kakao-logo.svg');
-            background-size: cover;
-        }
-    }
-}
+//         &::after {
+//             content: '';
+//             display: block;
+//             position: absolute;
+//             top: 3px;
+//             left: 0;
+//             width: 20px;
+//             height: 20px;
+//             background-image: url('/img/icon/kakao-logo.svg');
+//             background-size: cover;
+//         }
+//     }
+// }
 
 .tit01 {
     font-size: 20px;
