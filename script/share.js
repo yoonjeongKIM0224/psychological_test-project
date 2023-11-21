@@ -6,8 +6,8 @@ content: {
     imageUrl:
     'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
     link: {
-    mobileWebUrl: 'https://developers.kakao.com',
-    webUrl: 'https://developers.kakao.com',
+    mobileWebUrl: 'https://www.yoursimlee.com',
+    webUrl: 'https://www.yoursimlee.com',
     },
 }
 });
