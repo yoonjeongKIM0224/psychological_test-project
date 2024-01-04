@@ -537,6 +537,93 @@ img {
     margin-bottom: 20px;
 }
 
-.mt40 {
-    margin-top: 40px;
-}
+.cookie_ico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .cookie_ico > span {
+    width: 180px;
+    height: 180px;
+    background-image: url("/img/icon/fortune-cookie01.png");
+    background-size: cover;
+  }
+  
+  .cookie_ico > p {
+    margin-top: 24px;
+  }
+  
+  .ampm_cont {
+    display: none;
+  }
+  
+  .ampm_cont * {
+    display: none;
+    transition: 0.3s;
+  }
+  
+  .cookie_ico.am > .am_cont {
+    display: block;
+  }
+  
+  .cookie_ico.pm > .pm_cont {
+    display: block;
+  }
+  
+  .cookie_ico[data-click="click1"] .ampm_cont .txt01 {
+    display: block;
+  }
+  
+  .cookie_ico[data-click="click2"] .ampm_cont .txt02 {
+    display: block;
+  }
+  
+  .cookie_ico[data-click="click3"] .ampm_cont .txt03 {
+    display: block;
+  }
+  
+  .cookie_ico[data-click="click1"] > span {
+    background-image: url("/img/icon/fortune-cookie02.png");
+  }
+  
+  .cookie_ico[data-click="click2"] > span {
+    background-image: url("/img/icon/fortune-cookie03.png");
+  }
+  
+  .cookie_ico[data-click="click3"] > span {
+    background-image: url("/img/icon/fortune-cookie04.png");
+  }
+  
+  .cookie_ico[data-click="click4"] {
+    display: none;
+  }
+  
+  @keyframes shakeX {
+    0%,to {
+      -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+  
+    10%,30%,50%,70%,90% {
+        -webkit-transform: translate3d(-10px,0,0);
+        transform: translate3d(-10px,0,0)
+    }
+  
+    20%,40%,60%,80% {
+        -webkit-transform: translate3d(10px,0,0);
+        transform: translate3d(10px,0,0)
+    }
+  }
+  
+  .animate__shakeX {
+    animation-duration: 1.6s;
+    animation-name: shakeX;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+  }
