@@ -25,8 +25,8 @@ let today = new Date();
 let hours  = today.getHours();
 
 if(hours > 18){
-    console.log('저녁');
+    cookieIco.classList.add('pm');
 } else {
-    console.log('낮');
+    cookieIco.classList.add('am');
 }
 

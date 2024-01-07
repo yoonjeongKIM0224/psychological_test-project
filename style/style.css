@@ -518,6 +518,20 @@ img {
   display: none;
 }
 
+.cookie_info {
+  background-color: pink;
+  padding: 20px;
+  border: 4px solid #000;
+}
+
+.cookie_info, .cookie_ico ~ .btn-wrap {
+  display: none;
+}
+
+.cookie_ico[data-click="click4"] ~ .cookie_info, .cookie_ico[data-click="click4"] ~ .btn-wrap {
+  display: block;
+}
+
 @keyframes shakeX {
   0%,to {
     -webkit-transform: translateZ(0);
