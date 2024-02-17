@@ -41,23 +41,22 @@ function begin(){
             document.querySelector('.inp-area .form_msg').classList.add('on');
         } else {
             peopleName = peopleNameInp.value;
+            main.style.animation = "fadeOut 0.5s"; // main 사라지는 중
+
+            setTimeout(()=>{ // [main 사라지는 중]의 중간 시점에서 시작
+                qna.style.animation = "fadeIn 0.5s"; // qna 생기는 중
+                
+                setTimeout(()=>{ // [main 사라지는 중]의 끝 시점, [qna 생기는 중]의 중간에서 시작
+                    main.style.display = "none"; // main none
+                    qna.style.display = "block"; // qna block
+                }, 240); // 0.24초
+                
+                let qIdx = 0;
+                goNext(qIdx);
+
+            }, 240); // 0.24초
         }
     }
-
-    main.style.animation = "fadeOut 0.5s"; // main 사라지는 중
-
-    setTimeout(()=>{ // [main 사라지는 중]의 중간 시점에서 시작
-        qna.style.animation = "fadeIn 0.5s"; // qna 생기는 중
-        
-        setTimeout(()=>{ // [main 사라지는 중]의 끝 시점, [qna 생기는 중]의 중간에서 시작
-            main.style.display = "none"; // main none
-            qna.style.display = "block"; // qna block
-        }, 240); // 0.24초
-        
-        let qIdx = 0;
-        goNext(qIdx);
-
-    }, 240); // 0.24초
 }
 
 function goNext(qIdx){ // 처음은 qIdx = 0

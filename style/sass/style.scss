@@ -502,6 +502,10 @@ img {
         color: #fff;
         font-weight: 400;
         font-size: 14px;
+
+        &.name01 {
+            display: none;
+        }
         
         &.name02 {
             top: 8%;
