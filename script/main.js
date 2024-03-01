@@ -35,6 +35,21 @@ function start(){
     main.classList.add('inp_time');
 }
 
+function nextPage(){
+    setTimeout(()=>{ // [main 사라지는 중]의 중간 시점에서 시작
+        qna.style.animation = "fadeIn 0.5s"; // qna 생기는 중
+        
+        setTimeout(()=>{ // [main 사라지는 중]의 끝 시점, [qna 생기는 중]의 중간에서 시작
+            main.style.display = "none"; // main none
+            qna.style.display = "block"; // qna block
+        }, 240); // 0.24초
+        
+        let qIdx = 0;
+        goNext(qIdx);
+
+    }, 240); // 0.24초
+}
+
 function begin(){
     if(peopleNameInp){
         if(!peopleNameInp.value) {
@@ -43,19 +58,10 @@ function begin(){
             peopleName = peopleNameInp.value;
             main.style.animation = "fadeOut 0.5s"; // main 사라지는 중
 
-            setTimeout(()=>{ // [main 사라지는 중]의 중간 시점에서 시작
-                qna.style.animation = "fadeIn 0.5s"; // qna 생기는 중
-                
-                setTimeout(()=>{ // [main 사라지는 중]의 끝 시점, [qna 생기는 중]의 중간에서 시작
-                    main.style.display = "none"; // main none
-                    qna.style.display = "block"; // qna block
-                }, 240); // 0.24초
-                
-                let qIdx = 0;
-                goNext(qIdx);
-
-            }, 240); // 0.24초
+            nextPage();
         }
+    } else {
+        nextPage();
     }
 }
 
@@ -222,9 +228,9 @@ function setResult(){
     }
     
     const resultName = document.querySelector('.resultName'); //결과 제목 요소
-    resultName.innerHTML = point; //결과 제목 요소에 텍스트 넣기
+    resultName ? resultName.innerHTML = point : null; //결과 제목 요소에 텍스트 넣기
     const resultDesc = document.querySelector('.resultDesc');
-    resultDesc.innerHTML = infoPoint.desc;
+    resultDesc ? resultDesc.innerHTML = infoPoint.desc : null;
     const imgDiv = document.querySelector('#resultImg'); //만든 img 태그 넣을 부모 요소
     let resultImg = document.createElement('img'); //img 태그 만들기
     let imgURL = `/img/test/image-${result.dataset.testname}-${infoPoint.name}.svg`; //동일한 주소 변수 생성

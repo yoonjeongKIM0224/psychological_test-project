@@ -24,70 +24,50 @@ myScript01.src = 'https://kit.fontawesome.com/c21bf41c63.js';
 myScript01.crossOrigin = 'anonymous';
 head.appendChild(myScript01);
 
-let fileName = window.location.pathname.split("/").pop();
+let allWrapper = document.querySelector('.all-wrapper');
+let header = document.createElement('header');
 
-let menuNav = [
+let testList = [
     {
-        myHref: 'all.html',
-        myTit: '전체'
+        myLink: 'devotion.html',
+        myImg: '/img/test/devotion-thumbnail01.svg',
+        myTit: '나는 상대방의 헌신에 어떨까?',
+        myDesc: '누군가 "난 널 위해서 죽을 수 있어."라고 한다면?'
     },
     {
-        myHref: 'love.html',
-        myTit: '연애 테스트'
-    },
-    {
-        myHref: 'fun.html',
-        myTit: '재미 테스트'
+        myLink: 'perfume.html',
+        myImg: '/img/test/devotion-thumbnail01.svg',
+        myTit: '나는 어떤 향기의 사람일까?',
+        myDesc: 'ex) 나는 시원한 향의 사람이야~'
     }
 ];
 
-let allWrapper = document.querySelector('.all-wrapper');
-let header = document.createElement('header');
-let btmNav = document.createElement('div');
-btmNav.classList.add('header');
 
 let lis = '';
-let ulFile = false;
 
-menuNav.forEach(function(item){
-    li = `<li class="item ${item.myHref === fileName ? 'active' : ''}">
-        <a href="/pages/main/${item.myHref}" class="item-cont">
-            <i class="fa-solid fa-heart"></i>
-            ${item.myTit}
+testList.forEach(function(item){
+    li = `<li class="item">
+        <a href="/pages/test/${item.myLink}" class="item-cont">
+            <div class="img_wrap">
+                <img src="${item.myImg}" alt="썸네일">
+            </div>
+            <div class="txt_area">
+                <span class="tit">${item.myTit}</span>
+                <p class="desc">${item.myDesc}</p>
+            </div>
         </a>
-    </li>`
+    </li>`;
 
     lis += li;
-
-    if(fileName === item.myHref){
-        ulFile = true;
-    }
 });
 
-let ul = `
-<div class="list-type01 top-list-wrap round">
-    <ul class="list scrll_wrap">
-        ${lis}
-    </ul>
-</div>`;
+let testUl = document.querySelector('#testUl');
+
+testUl ? testUl.innerHTML = lis : null;
 
 header.innerHTML = `
     <div class="logo_wrap">
         <h1 class="logo01"><a href="/pages/main/all.html"><span class="blind">your simlee</span></a></h1>
-    </div>
-    ${ulFile ? ul : ''}`;
-
-btmNav.innerHTML = `
-    <div class="header-wrap">
-        <div class="list-type01">
-            <ul class="list">
-                <li class="item">
-                    <a href="/pages/main/all.html" class="item-cont" title="메인페이지 가기">
-                        <i class="fa-solid fa-house clr-white"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>`;
 
 allWrapper.prepend(header);
